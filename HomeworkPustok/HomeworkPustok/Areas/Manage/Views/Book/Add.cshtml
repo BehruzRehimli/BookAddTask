@@ -1,0 +1,71 @@
+﻿@model Book
+
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h3 class="text-center mb-3 mt-5">Add Book</h3>
+            <form method="post" asp-action="Add" enctype="multipart/form-data">
+                <label class="mt-3" asp-for="Title">Title</label><br />
+                <input class="form-control" asp-for="Title" />
+                <span class="text-danger" asp-validation-for="Title"></span><br />
+
+                <label class="mt-3" asp-for="Price">Price</label><br />
+                <input class="form-control" asp-for="Price" />
+                <span class="text-danger" asp-validation-for="Price"></span><br />
+
+                <label class="mt-3" asp-for="Desc">Description</label><br />
+                <input class="form-control " asp-for="Desc" />
+                <span class="text-danger" asp-validation-for="Desc"></span><br />
+
+                <label class="mt-3" asp-for="Discount">Discount</label><br />
+                <input class="form-control " asp-for="Discount" />
+                <span class="text-danger" asp-validation-for="Discount"></span><br />
+
+                <label class="mt-3" asp-for="RewardPoint">Reward Point</label><br />
+                <input class="form-control  " asp-for="RewardPoint" />
+                <span class="text-danger" asp-validation-for="RewardPoint"></span><br />
+
+                <label asp-for="AuthorId" class="mt-3" >Author</label>
+                <select class="form-control" asp-for="AuthorId" asp-items="new SelectList(ViewBag.Authors,nameof(Author.Id),nameof(Author.Name))">
+
+                </select>
+
+                <label asp-for="GenreId" class="mt-3">Genre</label>
+                <select class="form-control" asp-for="GenreId" asp-items="new SelectList(ViewBag.Genres,nameof(Genre.Id),nameof(Genre.Name))">
+                </select>
+
+                <label asp-for="TagsIds" class="mt-3">Tags</label>
+                <select class="form-control" asp-for="TagsIds" asp-items="new SelectList(ViewBag.Tags,nameof(Tag.Id),nameof(Tag.Name))">
+                </select>
+
+                 <label class="mt-3" asp-for="IsFeature">Feature</label><br />
+                <input class="form-control  " asp-for="IsFeature" />
+                <span class="text-danger" asp-validation-for="IsFeature"></span>
+
+                 <label class="mt-3" asp-for="Availability">Aviable</label><br />
+                <input class="form-control  " asp-for="Availability" />
+                <span class="text-danger" asp-validation-for="Availability"></span>
+
+                <label class="mt-3" asp-for="MainImage">Main Image</label><br />
+                <input class="form-control  " asp-for="MainImage" />
+                <span class="text-danger" asp-validation-for="MainImage"></span>
+
+                <label class="mt-3" asp-for="SecondImage">Second Image</label><br />
+                <input class="form-control  " asp-for="SecondImage" />
+                <span class="text-danger" asp-validation-for="SecondImage"></span>
+
+
+                <label class="mt-3" asp-for="MoreImageis">More Imageis</label><br />
+                <input class="form-control  " asp-for="MoreImageis" />
+                <span class="text-danger" asp-validation-for="MoreImageis"></span>
+
+
+
+                <button type="submit" style="width:100%" class="btn btn-primary mt-4">Add Genre</button>
+            </form>
+        </div>
+
+    </div>
+</div>

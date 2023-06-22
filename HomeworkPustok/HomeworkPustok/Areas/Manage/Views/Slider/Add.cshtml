@@ -1,0 +1,36 @@
+﻿@model Slider
+
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h3 class="text-center mb-3 mt-5">Add Slide</h3>
+            <form method="post" asp-action="Add" enctype="multipart/form-data">
+                <label class="mt-3" asp-for="Title1">Title1</label><br />
+                <input class="form-control" asp-for="Title1" />
+                <span class="text-danger" asp-validation-for="Title1"></span><br />
+
+                <label class="mt-3" asp-for="Title2">Title2</label><br />
+                <input class="form-control" asp-for="Title2" />
+                <span class="text-danger" asp-validation-for="Title2"></span><br />
+
+                <label class="mt-3" asp-for="Des">Description</label><br />
+                <input class="form-control " asp-for="Des" />
+                <span class="text-danger" asp-validation-for="Des"></span><br />
+
+                <label class="mt-3" asp-for="SlideLocation">Order Slide</label><br />
+                <input class="form-control " asp-for="SlideLocation" />
+                <span class="text-danger" asp-validation-for="SlideLocation"></span><br />
+
+                <label class="mt-3" asp-for="ImageFile">Image File</label><br />
+                <input class="form-control  " asp-for="ImageFile" />
+                <span class="text-danger" asp-validation-for="ImageFile"></span>
+ 
+
+                <button type="submit" style="width:100%" class="btn btn-primary mt-4">Add Genre</button>
+            </form>
+        </div>
+
+    </div>
+</div>

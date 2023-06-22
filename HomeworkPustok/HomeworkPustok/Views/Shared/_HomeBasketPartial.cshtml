@@ -1,0 +1,33 @@
+﻿@model List<BasketPartialVM>
+
+
+
+@foreach(BasketPartialVM item in Model)
+{
+    <div class=" single-cart-block ">
+        <div class="cart-product">
+            <a href="product-details.html" class="image">
+                <img src="image/products/@(item.Book.Images[0].Image)" alt="">
+            </a>
+            <div class="content">
+                <h3 class="title">
+                    <a href="product-details.html">
+                       @item.Book.Title
+                    </a>
+                </h3>
+                <p class="price"><span class="qty">@item.Count ×</span> £@((item.Book.Discount>0)?(item.Book.Price*(100-item.Book.Discount)/100).ToString("0.00"):item.Book.Price)</p>
+                <a asp-controller="Book" asp-action="BasketDelete" asp-route-id="@item.Book.Id" class="cross-btn"><i class="fas fa-times"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class=" single-cart-block ">
+        <div class="btn-block">
+            <a href="cart.html" class="btn">
+                View Cart <i class="fas fa-chevron-right"></i>
+            </a>
+            <a href="checkout.html" class="btn btn--primary">
+                Check Out <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+}
